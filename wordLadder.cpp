@@ -122,9 +122,9 @@ public:
 
             {
 
-                char c = t[i];
+                char c = t[i]; // record original letter
 
-                for (int j = 0; j < 26; j++)
+                for (int j = 0; j < 26; j++) // find any changes
 
                 {
 

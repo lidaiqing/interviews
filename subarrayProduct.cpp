@@ -43,3 +43,41 @@ public:
     }
 
 };
+
+class Solution {
+// O(1) space solution, use pre and now to rotate nums
+public:
+
+    int maxProduct(vector<int>& nums) {
+
+        if (nums.size() == 0) return 0;
+
+        int maxNumPre = nums[0];
+
+        int minNumPre = nums[0];
+
+        int maxRes = nums[0];
+
+        int maxNumNow, minNumNow;
+
+        for (int i = 1; i < nums.size(); i++)
+
+        {
+
+            maxNumNow = max(nums[i], max(nums[i] * maxNumPre, nums[i] * minNumPre));
+
+            minNumNow = min(nums[i], min(nums[i] * minNumPre, nums[i] * maxNumPre));
+
+            maxRes = max(maxRes, max(maxNumNow, minNumNow));
+
+            maxNumPre = maxNumNow;
+
+            minNumPre = minNumNow;
+
+        }
+
+        return maxRes;
+
+    }
+
+};

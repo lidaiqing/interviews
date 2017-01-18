@@ -25,7 +25,7 @@ public:
         }
         vector<string> res;
         string start = "JFK";
-        res.emplace_back(start);
+        res.emplace_back(start); // remember to init data
         findItineraryHelper(tickets.size() + 1, start, res);
         return res;
     }

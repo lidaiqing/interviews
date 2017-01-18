@@ -1,5 +1,10 @@
 class Solution {
 // divide and conquer
+// maintain four variables: sum, max sum, max left sum, max right sum
+// sum = left.sum + right.sum
+// max sum = max(left.maxsum, right.maxsum, left.max right sum + right. max left sum
+// max left sum = max(left.maxsum, left.sum + right.maxleft)
+// max right sum = max(right.maxsum, right.sum + left.maxright)
 public:
 
     struct Res {
@@ -16,7 +21,7 @@ public:
 
         if (l == r) {
 
-            return {nums[l],nums[l],nums[l],nums[l]};
+            return {nums[l],nums[l],nums[l],nums[l]}; // base case
 
         }
 
@@ -40,6 +45,8 @@ public:
 
 class Solution {
 // dynamic programming
+// if cur_sum is less than 0, there is no good to keep it, reset it to 0
+// but remember to update result dut to negative values
 public:
 
     int maxSubArray(vector<int>& nums) {

@@ -19,7 +19,7 @@ public:
         int i = 1;
         while (i < intervals.size())
         {
-            if (intervals[i].start <= r) r = max(r, intervals[i].end);
+            if (intervals[i].start <= r) r = max(r, intervals[i].end); // keep the maximum right
             else {
                 res.emplace_back(l, r);
                 l = intervals[i].start;

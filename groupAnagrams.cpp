@@ -1,5 +1,6 @@
 class Solution {
-
+// sort each string and put it into hashtable
+// O(nklog(k))
 public:
 
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
